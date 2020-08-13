@@ -22,6 +22,8 @@ RUN microdnf update -y && microdnf install -y glibc-langpack-en gzip hostname ja
 ADD tools /opt/jboss/tools
 RUN /opt/jboss/tools/build-keycloak.sh
 
+COPY standalone.xml /opt/jboss/keycloak/standalone/configuration/standalone.xml
+
 USER 1000
 
 EXPOSE 8080
